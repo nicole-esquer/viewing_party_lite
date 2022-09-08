@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'discover movies page', type: :feature do
    it 'has title' do
-      user = User.create!(name: "Nancy", email: "nancydrew@email.com")
+      user = User.create!(name: "Nancy", email: "nancydrew@email.com", password: "123")
 
       visit user_path(user.id)
       expect(page).to have_link("Discover Movies")
@@ -13,7 +13,7 @@ RSpec.describe 'discover movies page', type: :feature do
 
    describe "#buttons" do
       it 'has button to discover top rated movies' do
-         user_1 = User.create!(name: 'Cindy Lou', email: 'cidlou@gmail.com')
+         user_1 = User.create!(name: 'Cindy Lou', email: 'cidlou@gmail.com', password: "123")
 
          visit "/users/#{user_1.id}/discover"
          
@@ -21,7 +21,7 @@ RSpec.describe 'discover movies page', type: :feature do
       end
 
       it 'click discover top rated movies button to see results', :vcr do
-         user_1 = User.create!(name: 'Cindy Lou', email: 'cidlou@gmail.com')
+         user_1 = User.create!(name: 'Cindy Lou', email: 'cidlou@gmail.com', password: "123")
 
          visit "/users/#{user_1.id}/discover"
 
@@ -31,7 +31,7 @@ RSpec.describe 'discover movies page', type: :feature do
       end
 
       it 'has form to search for a movie' do
-         user_1 = User.create!(name: 'Cindy Lou', email: 'cidlou@gmail.com')
+         user_1 = User.create!(name: 'Cindy Lou', email: 'cidlou@gmail.com', password: "123")
 
          visit "/users/#{user_1.id}/discover"
 
@@ -39,7 +39,7 @@ RSpec.describe 'discover movies page', type: :feature do
       end
 
       it 'has button to search for a movie by name' do
-         user_1 = User.create!(name: 'Cindy Lou', email: 'cidlou@gmail.com')
+         user_1 = User.create!(name: 'Cindy Lou', email: 'cidlou@gmail.com', password: "123")
 
          visit "/users/#{user_1.id}/discover"
 
@@ -47,7 +47,7 @@ RSpec.describe 'discover movies page', type: :feature do
       end
 
       it 'keyword results', :vcr do
-         user = User.create!(name: "Nancy", email: "nancydrew@email.com")
+         user = User.create!(name: "Nancy", email: "nancydrew@email.com", password: "123")
       
          visit "/users/#{user.id}/discover"
 

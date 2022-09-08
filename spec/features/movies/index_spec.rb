@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Movies Results Page', type: :feature do
    it 'shows top rated movies button', :vcr do
-      user = User.create!(name: "Nancy", email: "nancydrew@email.com")
+      user = User.create!(name: "Nancy", email: "nancydrew@email.com", password: "123")
 
       visit user_discover_index_path(user.id)
 
@@ -14,7 +14,7 @@ RSpec.describe 'Movies Results Page', type: :feature do
    end
 
    it 'keyword results', :vcr do
-      user = User.create!(name: "Nancy", email: "nancydrew@email.com")
+      user = User.create!(name: "Nancy", email: "nancydrew@email.com", password: "123")
       
       visit "/users/#{user.id}/discover"
 

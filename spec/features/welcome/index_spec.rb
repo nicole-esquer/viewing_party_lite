@@ -37,9 +37,9 @@ RSpec.describe 'landing page' do
     end
 
     it 'displays all exisiting users by email address' do
-      user_1 = User.create!(name: 'Cindy Lou', email: 'cidlou@gmail.com')
-      user_2 = User.create!(name: 'David Smith', email: 'daves@gmail.com')
-      user_3 = User.create!(name: 'Mary Jones', email: 'maryjonesu@gmail.com')
+      user_1 = User.create!(name: 'Cindy Lou', email: 'cidlou@gmail.com', password: "123")
+      user_2 = User.create!(name: 'David Smith', email: 'daves@gmail.com', password: "1234")
+      user_3 = User.create!(name: 'Mary Jones', email: 'maryjonesu@gmail.com', password: "12345")
 
       visit '/'
 
@@ -60,9 +60,9 @@ RSpec.describe 'landing page' do
     end
 
     it 'each users email is a link to their specific dashboard' do
-      user_1 = User.create!(name: 'Cindy Lou', email: 'cidlou@gmail.com')
-      user_2 = User.create!(name: 'David Smith', email: 'daves@gmail.com')
-      user_3 = User.create!(name: 'Mary Jones', email: 'maryjonesu@gmail.com')
+      user_1 = User.create!(name: 'Cindy Lou', email: 'cidlou@gmail.com', password: "123")
+      user_2 = User.create!(name: 'David Smith', email: 'daves@gmail.com', password: "1234")
+      user_3 = User.create!(name: 'Mary Jones', email: 'maryjonesu@gmail.com', password: "12345")
 
       visit '/'
       

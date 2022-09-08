@@ -2,10 +2,10 @@ require 'rails_helper'
 
 RSpec.describe 'New Viewing Party Page', type: :feature do
    it 'has name of the movie title rendered above a new viewing party form', :vcr do
-      user1 = User.create!(name: 'Nancy Drew', email: 'nancydrew@gmail.com')
-      user2 = User.create!(name: 'Jenny', email: 'jennyfromtheblock@email.com')
-      user3 = User.create!(name: 'Sherlock Holmes', email: '221bbaker@email.com')
-      user4 = User.create!(name: 'Jelly Bean', email: 'jellybean123@email.com')
+      user1 = User.create!(name: 'Nancy Drew', email: 'nancydrew@gmail.com', password: "123")
+      user2 = User.create!(name: 'Jenny', email: 'jennyfromtheblock@email.com', password: "1234")
+      user3 = User.create!(name: 'Sherlock Holmes', email: '221bbaker@email.com', password: "12345")
+      user4 = User.create!(name: 'Jelly Bean', email: 'jellybean123@email.com', password: "123456")
 
       movie_details = MovieFacade.get_movie_details(505)
 

@@ -3,14 +3,14 @@ require 'rails_helper'
 RSpec.describe 'Movie Details Page', type: :feature do
   describe '#buttons' do
     it "has button to create a viewing party", :vcr do
-      user = User.create!(name: "Nancy", email: "nancydrew@email.com")
+      user = User.create!(name: "Nancy", email: "nancydrew@email.com", password: "123")
       visit user_movie_path(user.id, 505)
       click_button "Create a Viewing Party"
       expect(current_path).to eq("/users/#{user.id}/movies/505/viewing_party/new") 
     end
     
     it "has a button to return to discover page", :vcr do
-      user = User.create!(name: "Nancy", email: "nancydrew@email.com")
+      user = User.create!(name: "Nancy", email: "nancydrew@email.com", password: "123")
       visit user_movie_path(user.id, 505)
       click_button "Return to Discover Page"
       expect(current_path).to eq(user_discover_index_path(user.id)) 
@@ -19,7 +19,7 @@ RSpec.describe 'Movie Details Page', type: :feature do
 
   describe '#reviews' do
     it 'displays number of reviews and the authors', :vcr do
-      user = User.create!(name: "Nancy", email: "nancydrew@email.com")
+      user = User.create!(name: "Nancy", email: "nancydrew@email.com", password: "123")
 
       visit user_movie_path(user.id, 500)
 
@@ -39,7 +39,7 @@ RSpec.describe 'Movie Details Page', type: :feature do
     end
 
     it 'displays content of review', :vcr do
-      user = User.create!(name: "Nancy", email: "nancydrew@email.com")
+      user = User.create!(name: "Nancy", email: "nancydrew@email.com", password: "123")
 
       visit user_movie_path(user.id, 500)
 
